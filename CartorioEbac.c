@@ -1,7 +1,7 @@
-#include <stdio.h>  //biblioteca de comunicaÁ„o do usu·rio
-#include <stdlib.h> //biblioteca de alocaÁ„o de espaÁo em mÈmoria
-#include <locale.h> //biblioteca de alocaÁ„o de texto por regi„o
-#include <string.h> //biblioteca respons·vel por cuidar das strings
+#include <stdio.h>  //biblioteca de comunica√ß√£o do usu√°rio
+#include <stdlib.h> //biblioteca de aloca√ß√£o de espa√ßo em m√©moria
+#include <locale.h> //biblioteca de aloca√ß√£o de texto por regi√£o
+#include <string.h> //biblioteca respons√°vel por cuidar das strings
 
 int registro()
 {
@@ -14,11 +14,11 @@ int registro()
 	printf("Digite o CPF a ser cadastrado: ");
 	scanf("%s", cpf);
 	
-	strcpy(arquivo, cpf); // Respons·vel por copiar os valores das strings
+	strcpy(arquivo, cpf); // Respons√°vel por copiar os valores das strings
 	
 	FILE *file; //cria o arquivo
 	file = fopen(arquivo, "w"); //cria o arquivo
-	fprintf(file,cpf); //Salva o valor da vari·vel
+	fprintf(file,cpf); //Salva o valor da vari√°vel
 	fclose(file); //Fecha o arquivo
 	
 	file = fopen(arquivo, "a");
@@ -57,7 +57,6 @@ int registro()
 	system("pause");
 }
 
-
 int consultar()
 {
 	setlocale (LC_ALL, "Portuguese"); //definindo linguagem
@@ -73,19 +72,18 @@ int consultar()
 	
 	if(file == NULL)
 	{
-		printf("N„o foi possÌvel abrir o arquivo, n„o localizado!. \n");
+	    printf("N√£o foi poss√≠vel abrir o arquivo, n√£o localizado!. \n");
 		
 	}
 	
 	while(fgets(conteudo, 200, file) != NULL)
 	{
-	    printf("\nEssas s„o as informaÁıes do usu·rio: ");
+	    printf("\nEssas s√£o as informa√ß√µes do usu√°rio: ");
 	    printf("%s", conteudo);
 	    printf("\n\n");
 	}
 	system("pause");
 }
-	
 
 int deletar()
 {
@@ -101,19 +99,15 @@ int deletar()
 	
 	if(file == NULL)
 	{
-		printf("O usu·rio n„o se encontra no sistema.\n");
-		system("pause");
+	    printf("O usu√°rio n√£o se encontra no sistema.\n");
+	    system("pause");
 	}
-	
-	
-
 }
 
-
 int main()
-    {
+{
 
-	int opcao=0;  //definindo vari·veis
+	int opcao=0;  //definindo vari√°veis
 	int laco=1;
 	
 	for(laco=1;laco=1;)
@@ -122,14 +116,14 @@ int main()
 	
 	    setlocale (LC_ALL, "Portuguese"); //definindo linguagem
 	
-	    printf("\t__CartÛrio EBAC__\n\n");  //inÌcio do menu
-        printf("Escolha a opÁ„o desejada do menu:\n\n");
-        printf("\t1 - Registrar nome\n");
+	    printf("\t__Cart√≥rio EBAC__\n\n");  //in√≠cio do menu
+            printf("Escolha a op√ß√£o desejada do menu:\n\n");
+            printf("\t1 - Registrar nome\n");
 	    printf("\t2 - Consultar nome\n");
 	    printf("\t3 - Deletar nome\n\n\n"); 
-	    printf("OpÁ„o: ");  //fim do menu
+	    printf("Op√ß√£o: ");  //fim do menu
 
-        scanf("%d", &opcao);  //armazenando a escolha do usu·rio
+            scanf("%d", &opcao);  //armazenando a escolha do usu√°rio
     
 	
 	    system("cls");  //limpar a tela
@@ -143,20 +137,16 @@ int main()
 	        
 	        case 2:
 	        consultar();
-		    break;
+	        break;
 		    
-		    case 3:
-		    deletar();
-		    break;
+		case 3:
+		deletar();
+		break;
 		    
-		    default:
-		    printf("Essa opÁ„o n„o est· disponÌvel.\n");
+		default:
+		printf("Essa op√ß√£o n√£o est√° dispon√≠vel.\n");
 	    	system("pause");
-	    	break;
-		    
-		}
-	    
-	
-    }
-    	
+	    	break;    
+	    }
+      }	
 }
